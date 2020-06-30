@@ -19,6 +19,6 @@ resource "proxmox_lxc" "lxc-test" {
     password = "Espoir15"
     rootfs = "local:201" 
     storage = "local"
- #   target_node = "proxmox"
+    target_node = "lxc-test"
     unprivileged = true
 }

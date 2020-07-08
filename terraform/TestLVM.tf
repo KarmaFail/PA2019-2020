@@ -19,11 +19,13 @@ resource "proxmox_lxc" "lxc-test" {
     ostemplate = "local:vztmpl/debian-10.0-standard_10.0-1_amd64.tar.gz" 
     password = "Espoir15"
     vmid = "201"
-    storage = "local"
-    mountpoint {
-        volume = "vm-201-disk-0"
+    disk {
+        storage = "local"
         size = "8"
+        format = "raw"
+        id = "0"
     }
     target_node = "PAR-212482"
     unprivileged = false
+    onboot = true
 }

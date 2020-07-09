@@ -14,7 +14,7 @@ resource "proxmox_lxc" "Minio-1" {
         bridge = "vmbr5"
     }
     mountpoint {
-        volume = "data1.raw"
+        volume = "1"
         mp = "/mnt/data1"
         size = 80
     }
@@ -43,7 +43,7 @@ resource "proxmox_lxc" "Minio-2" {
         bridge = "vmbr5"
     }
     mountpoint {
-        volume = "data2.raw"
+        volume = "1"
         mp = "/mnt/data2"
         size = 80
     }

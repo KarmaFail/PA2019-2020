@@ -1,0 +1,7 @@
+MINIO_ACCESS_KEY: adminesgi
+MINIO_SECRET_KEY: adminesgi
+minio_n: 2
+ipreseau_minio: 192.168.30.6 
+ip_vrrp_minio: 192.168.30.60
+ip_minio_1: 192.168.30.61
+ip_minio_2: 192.168.30.62

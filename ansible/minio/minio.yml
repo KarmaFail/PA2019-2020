@@ -1,0 +1,50 @@
+- name: Common pre-requisites
+  hosts: minio_nodes
+  gather_facts: yes
+  
+
+  tasks:
+    - include_vars: minio-vars.yml
+
+    - debug: var=ps.stdout_lines
+    
+    - name: telechargement binaire minio
+      shell: |
+        wget https://dl.min.io/server/minio/release/linux-amd64/minio
+        chmod +x minio
+      args:
+       executable: /bin/bash
+    
+    - name: installation binaire minio
+      shell: |
+        mv minio /usr/local/bin
+        useradd -r minio-user -s /sbin/nologin
+        chown minio-user:minio-user /usr/local/bin/minio
+        mkdir /usr/local/share/minio
+        chown minio-user:minio-user /usr/local/share/minio
+        mkdir /etc/minio
+        chown minio-user:minio-user /etc/minio
+      args:
+       executable: /bin/bash
+
+    - name: cat conf sql
+      shell: |
+        cat << EOF > /etc/default/minio
+        MINIO_ACCESS_KEY="{{ MINIO_ACCESS_KEY }}"
+        MINIO_VOLUMES=""
+        MINIO_OPTS="http://{{ ipreseau_minio }}{1...{{ minio_n }}}/mnt/data{1...{{ minio_n }}}"
+        MINIO_SECRET_KEY="{{ MINIO_SECRET_KEY }}"
+        EOF
+      args:
+       executable: /bin/bash
+
+    - name: installation service minio
+      shell: |
+        curl -O https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service
+        sed -i '/ExecStartPre/d' minio.service
+        mv minio.service /etc/systemd/system
+      args:
+       executable: /bin/bash
+
+    - name: Unconditionally reboot the machine with all defaults
+      reboot:

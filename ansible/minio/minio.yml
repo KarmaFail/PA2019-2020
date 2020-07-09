@@ -44,14 +44,26 @@
         group: root
         mode: u=rw,g=r,o=r
 
+    - name: Before Ansible 2.3, option 'dest', 'destfile' or 'name' was used instead of 'path'
+        replace:
+          path: /etc/systemd/system/minio.service
+          regexp: '${MINIO_ACCESS_KEY}'
+          replace: '{{ MINIO_ACCESS_KEY }}'
+
+    - name: Before Ansible 2.3, option 'dest', 'destfile' or 'name' was used instead of 'path'
+        replace:
+          path: /etc/systemd/system/minio.service
+          regexp: '${MINIO_SECRET_KEY}'
+          replace: '{{ MINIO_ACCESS_KEY }}'
+
     - name: installation service minio
-      shell: |
-        sed -i -e "s/${MINIO_ACCESS_KEY}/{{ MINIO_ACCESS_KEY }}/g" /etc/systemd/system/minio.service 
-        sed -i -e "s/${MINIO_SECRET_KEY}/{{ MINIO_SECRET_KEY }}/g" /etc/systemd/system/minio.service  
+      shell: |  
         systemctl daemon-reload
         systemctl enable minio
       args:
        executable: /bin/bash*
+
+
 
     - name: Reboot host and wait for it to restart
       reboot:

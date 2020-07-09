@@ -36,38 +36,22 @@
       args:
        executable: /bin/bash
 
-    - name: creation service minio
-      shell: |
-        cat << EOF > /etc/systemd/system/minio
-        [Unit]
-        Description=MinIO
-        Documentation=https://docs.min.io
-        Wants=network-online.target
-        After=network-online.target
-        AssertFileIsExecutable=/usr/local/bin/minio
-        [Service]
-        WorkingDirectory=/usr/local/
-        User=minio-user
-        Group=minio-user
-        EnvironmentFile=/etc/default/minio
-        ExecStart=/usr/local/bin/minio server $MINIO_OPTS $MINIO_VOLUMES MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY} MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
-        Restart=always
-        LimitNOFILE=65536
-        TimeoutStopSec=infinity
-        SendSIGKILL=no
-        [Install]
-        WantedBy=multi-user.target
-        EOF
-      args:
-       executable: /bin/bash
+    - name: Copy file with owner and permission, using symbolic representation
+      copy:
+        src: /git/PA2019-2020/ansible/minio/minio.service
+        dest: /etc/systemd/system/
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
 
     - name: installation service minio
       shell: |
+        sed -i -e "s/${MINIO_ACCESS_KEY}/{{ MINIO_ACCESS_KEY }}/g" /etc/systemd/system/minio.service 
+        sed -i -e "s/${MINIO_SECRET_KEY}/{{ MINIO_SECRET_KEY }}/g" /etc/systemd/system/minio.service  
         systemctl daemon-reload
         systemctl enable minio
       args:
-       executable: /bin/bash
-
+       executable: /bin/bash*
 
     - name: Reboot host and wait for it to restart
       reboot:

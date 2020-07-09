@@ -56,13 +56,17 @@
         regexp: '${MINIO_SECRET_KEY}'
         replace: '{{ MINIO_ACCESS_KEY }}'
 
-    - name: installation service minio
+    - name: deamon reload
       shell: |  
         systemctl daemon-reload
-        systemctl enable minio
       args:
        executable: /bin/bash*
 
+    - name: enable service minio
+      shell: |  
+        systemctl enable minio
+      args:
+       executable: /bin/bash*
 
 
     - name: Reboot host and wait for it to restart

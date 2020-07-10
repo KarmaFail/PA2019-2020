@@ -23,6 +23,7 @@
         chmod 777 /usr/local/bin/minio
         mkdir /etc/minio
         chown minio-user:minio-user /etc/minio
+        echo "MINIO_ACCESS_KEY=adminesgi" >>
       args:
        executable: /bin/bash
 

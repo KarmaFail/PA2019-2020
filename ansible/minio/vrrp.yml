@@ -1,7 +1,8 @@
 - name: Installation et configuration du VRRP pour sidekick
   hosts: "{{ ansible_hostsgroup }}"
   gather_facts: yes
-  include_vars: vrrp-vars.yml
+  vars_files: vrrp-vars.yml
+
   
 
   tasks:

@@ -34,3 +34,14 @@
         owner: root
         group: root
         mode: u=rw,g=r,o=r   
+
+    - name:  deamon reload and enable service sidekick
+      systemd:
+        enabled: yes
+        daemon_reload: yes
+        name: sidekick
+
+    - name:  restart service sidekick
+      systemd:
+        state: restarted
+        name: sidekick

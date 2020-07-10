@@ -10,7 +10,7 @@
 
     - name: Update repositories cache and install "linux headers" package
       apt:
-       name: "linux-headers-{{ ansible_kernel }}"
+       name: "linux-headers-amd64"
        update_cache: yes
 
     - name: Update repositories cache and install "keepalived" package

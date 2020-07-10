@@ -18,6 +18,10 @@ resource "proxmox_lxc" "Minio-1" {
         volume = "local:80"
         mp = "/mnt/data1"
     }
+    mountpoint {
+        volume = "local:80"
+        mp = "/mnt/data2"
+    }
     ostemplate = "local:vztmpl/template-debian_v1-0.tar.gz" 
     password = "Espoir15"
     vmid = "361"
@@ -42,6 +46,10 @@ resource "proxmox_lxc" "Minio-2" {
     network {
         name = "eth1"
         bridge = "vmbr5"
+    }
+    mountpoint {
+        volume = "local:80"
+        mp = "/mnt/data1"
     }
     mountpoint {
         volume = "local:80"

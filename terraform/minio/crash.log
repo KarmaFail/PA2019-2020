@@ -1,0 +1,1793 @@
+2020/07/10 07:56:53 [INFO] Terraform version: 0.12.28  
+2020/07/10 07:56:53 [INFO] Go runtime version: go1.12.13
+2020/07/10 07:56:53 [INFO] CLI args: []string{"/usr/local/bin/terraform", "apply"}
+2020/07/10 07:56:53 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2020/07/10 07:56:53 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/07/10 07:56:53 [DEBUG] checking for credentials in "/root/.terraform.d/plugins"
+2020/07/10 07:56:53 [INFO] CLI command args: []string{"apply"}
+2020/07/10 07:56:53 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/07/10 07:56:53 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/07/10 07:56:53 [DEBUG] New state was assigned lineage "72fda8c3-16d2-8ed5-eb07-5915488c6934"
+2020/07/10 07:56:53 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/07/10 07:56:53 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/07/10 07:56:53 [DEBUG] checking for provider in "."
+2020/07/10 07:56:53 [DEBUG] checking for provider in "/usr/local/bin"
+2020/07/10 07:56:53 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2020/07/10 07:56:53 [DEBUG] checking for provider in "/root/.terraform.d/plugins"
+2020/07/10 07:56:53 [WARN] found legacy provider "terraform-provider-proxmox"
+2020/07/10 07:56:53 [DEBUG] found valid plugin: "proxmox", "0.0.0", "/root/.terraform.d/plugins/terraform-provider-proxmox"
+2020/07/10 07:56:53 [DEBUG] checking for provisioner in "."
+2020/07/10 07:56:53 [DEBUG] checking for provisioner in "/usr/local/bin"
+2020/07/10 07:56:53 [DEBUG] checking for provisioner in ".terraform/plugins/linux_amd64"
+2020/07/10 07:56:53 [DEBUG] checking for provisioner in "/root/.terraform.d/plugins"
+2020/07/10 07:56:53 [WARN] found legacy provisioner "terraform-provisioner-proxmox"
+2020/07/10 07:56:53 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/07/10 07:56:53 [INFO] backend/local: starting Apply operation
+2020/07/10 07:56:53 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/07/10 07:56:53 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/07/10 07:56:53 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: no previously-stored snapshot exists
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/07/10 07:56:53 [TRACE] backend/local: reading remote state for workspace "default"
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2020/07/10 07:56:53 [TRACE] statemgr.Filesystem: read nil snapshot
+2020/07/10 07:56:53 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/07/10 07:56:53 [TRACE] backend/local: building context for current working directory
+2020/07/10 07:56:53 [TRACE] terraform.NewContext: starting
+2020/07/10 07:56:53 [TRACE] terraform.NewContext: resolving provider version selections
+2020/07/10 07:56:54 [TRACE] terraform.NewContext: loading provider schemas
+2020/07/10 07:56:54 [TRACE] LoadSchemas: retrieving schema for provider type "proxmox"
+2020-07-10T07:56:54.448Z [INFO]  plugin: configuring client automatic mTLS
+2020-07-10T07:56:54.533Z [DEBUG] plugin: starting plugin: path=/root/.terraform.d/plugins/terraform-provider-proxmox args=[/root/.terraform.d/plugins/terraform-provider-proxmox]
+2020-07-10T07:56:54.534Z [DEBUG] plugin: plugin started: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41283
+2020-07-10T07:56:54.534Z [DEBUG] plugin: waiting for RPC address: path=/root/.terraform.d/plugins/terraform-provider-proxmox
+2020-07-10T07:56:54.552Z [INFO]  plugin.terraform-provider-proxmox: configuring server automatic mTLS: timestamp=2020-07-10T07:56:54.551Z
+2020-07-10T07:56:54.638Z [DEBUG] plugin.terraform-provider-proxmox: plugin address: address=/tmp/plugin324097021 network=unix timestamp=2020-07-10T07:56:54.638Z
+2020-07-10T07:56:54.638Z [DEBUG] plugin: using plugin: version=5
+2020/07/10 07:56:54 [TRACE] GRPCProvider: GetSchema
+2020-07-10T07:56:54.828Z [TRACE] plugin.stdio: waiting for stdio data
+2020-07-10T07:56:54.831Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/07/10 07:56:54 [TRACE] GRPCProvider: Close
+2020-07-10T07:56:54.842Z [DEBUG] plugin: plugin process exited: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41283
+2020-07-10T07:56:54.842Z [DEBUG] plugin: plugin exited
+2020/07/10 07:56:54 [TRACE] terraform.NewContext: complete
+2020/07/10 07:56:54 [TRACE] backend/local: finished building terraform.Context
+2020/07/10 07:56:54 [TRACE] backend/local: requesting interactive input, if necessary
+2020/07/10 07:56:54 [TRACE] Context.Input: Prompting for provider arguments
+2020/07/10 07:56:54 [TRACE] Context.Input: Provider provider.proxmox declared at provider.tf:1,1-19
+2020/07/10 07:56:54 [TRACE] Context.Input: Input for provider.proxmox: map[string]cty.Value{}
+2020/07/10 07:56:54 [TRACE] backend/local: running validation operation
+2020/07/10 07:56:54 [INFO] terraform: building graph: GraphTypeValidate
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/07/10 07:56:54 [TRACE] ConfigTransformer: Starting for path: 
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  ------
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/07/10 07:56:54 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/07/10 07:56:54 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-1" (*terraform.NodeValidatableResource) config from minio.tf:1,1-33
+2020/07/10 07:56:54 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-2" (*terraform.NodeValidatableResource) config from minio.tf:34,1-33
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/07/10 07:56:54 [TRACE] ProviderConfigTransformer: attaching to "provider.proxmox" provider configuration from provider.tf:1,1-19
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  ------
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/07/10 07:56:54 [TRACE] ProviderTransformer: proxmox_lxc.Minio-1 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:54 [TRACE] ProviderTransformer: proxmox_lxc.Minio-2 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:54 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-1
+2020/07/10 07:56:54 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-1" (*terraform.NodeValidatableResource) needs provider.proxmox
+2020/07/10 07:56:54 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-2
+2020/07/10 07:56:54 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-2" (*terraform.NodeValidatableResource) needs provider.proxmox
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/07/10 07:56:54 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/07/10 07:56:54 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-1
+2020/07/10 07:56:54 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-2
+2020/07/10 07:56:54 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.proxmox
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:54 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-1" references: []
+2020/07/10 07:56:54 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-2" references: []
+2020/07/10 07:56:54 [DEBUG] ReferenceTransformer: "provider.proxmox" references: []
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:54 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/07/10 07:56:54 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+  proxmox_lxc.Minio-1 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeValidatableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:54 [DEBUG] Starting graph walk: walkValidate
+2020/07/10 07:56:54 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "root"
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-1"
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-2"
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "provider.proxmox"
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:54 [TRACE] dag/walk: added new vertex: "provider.proxmox (close)"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "root" waiting on "provider.proxmox (close)"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-2" waiting on "provider.proxmox"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-1" waiting on "provider.proxmox"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:54 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:54 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-2", sending new deps
+2020/07/10 07:56:54 [TRACE] dag/walk: dependencies changed for "provider.proxmox (close)", sending new deps
+2020/07/10 07:56:54 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-1", sending new deps
+2020/07/10 07:56:54 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/07/10 07:56:54 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/07/10 07:56:54 [TRACE] dag/walk: visiting "provider.proxmox"
+2020/07/10 07:56:54 [TRACE] vertex "provider.proxmox": starting visit (*terraform.NodeApplyableProvider)
+2020/07/10 07:56:54 [TRACE] vertex "provider.proxmox": evaluating
+2020/07/10 07:56:54 [TRACE] [walkValidate] Entering eval tree: provider.proxmox
+2020/07/10 07:56:54 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:54 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-07-10T07:56:54.845Z [INFO]  plugin: configuring client automatic mTLS
+2020-07-10T07:56:54.906Z [DEBUG] plugin: starting plugin: path=/root/.terraform.d/plugins/terraform-provider-proxmox args=[/root/.terraform.d/plugins/terraform-provider-proxmox]
+2020-07-10T07:56:54.906Z [DEBUG] plugin: plugin started: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41300
+2020-07-10T07:56:54.906Z [DEBUG] plugin: waiting for RPC address: path=/root/.terraform.d/plugins/terraform-provider-proxmox
+2020-07-10T07:56:54.917Z [INFO]  plugin.terraform-provider-proxmox: configuring server automatic mTLS: timestamp=2020-07-10T07:56:54.917Z
+2020-07-10T07:56:54.966Z [DEBUG] plugin.terraform-provider-proxmox: plugin address: address=/tmp/plugin532608371 network=unix timestamp=2020-07-10T07:56:54.966Z
+2020-07-10T07:56:54.966Z [DEBUG] plugin: using plugin: version=5
+2020/07/10 07:56:55 [TRACE] BuiltinEvalContext: Initialized "proxmox" provider for provider.proxmox
+2020/07/10 07:56:55 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalValidateProvider
+2020/07/10 07:56:55 [TRACE] buildProviderConfig for provider.proxmox: using explicit config only
+2020/07/10 07:56:55 [TRACE] GRPCProvider: GetSchema
+2020-07-10T07:56:55.074Z [TRACE] plugin.stdio: waiting for stdio data
+2020-07-10T07:56:55.076Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/07/10 07:56:55 [TRACE] GRPCProvider: PrepareProviderConfig
+2020/07/10 07:56:55 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:55 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:55 [TRACE] [walkValidate] Exiting eval tree: provider.proxmox
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": starting visit (*terraform.NodeValidatableResource)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": evaluating
+2020/07/10 07:56:55 [TRACE] [walkValidate] Entering eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2020/07/10 07:56:55 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": starting visit (*terraform.NodeValidatableResource)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": evaluating
+2020/07/10 07:56:55 [TRACE] [walkValidate] Entering eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2020/07/10 07:56:55 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:55 [TRACE] [walkValidate] Exiting eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": visit complete
+2020/07/10 07:56:55 [TRACE] [walkValidate] Exiting eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "provider.proxmox (close)"
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": evaluating
+2020/07/10 07:56:55 [TRACE] [walkValidate] Entering eval tree: provider.proxmox (close)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/07/10 07:56:55 [TRACE] GRPCProvider: Close
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/07/10 07:56:55 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/07/10 07:56:55 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-07-10T07:56:55.086Z [DEBUG] plugin: plugin process exited: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41300
+2020-07-10T07:56:55.086Z [DEBUG] plugin: plugin exited
+2020/07/10 07:56:55 [TRACE] [walkValidate] Exiting eval tree: provider.proxmox (close)
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "root"
+2020/07/10 07:56:55 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/07/10 07:56:55 [TRACE] vertex "root": visit complete
+2020/07/10 07:56:55 [INFO] backend/local: apply calling Refresh
+2020/07/10 07:56:55 [INFO] terraform: building graph: GraphTypeRefresh
+2020/07/10 07:56:55 [TRACE] No managed resources in state during refresh; skipping managed resource transformer
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/07/10 07:56:55 [TRACE] ConfigTransformer: Starting for path: 
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ConfigTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/07/10 07:56:55 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/07/10 07:56:55 [TRACE] ProviderConfigTransformer: attaching to "provider.proxmox" provider configuration from provider.tf:1,1-19
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/07/10 07:56:55 [DEBUG] pruning unused provider.proxmox
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer with new graph:
+  ------
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.graphTransformerMulti (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.CloseProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  root - terraform.graphNodeRoot
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer (no changes)
+2020/07/10 07:56:55 [DEBUG] Starting graph walk: walkRefresh
+2020/07/10 07:56:55 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "root"
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "root"
+2020/07/10 07:56:55 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/07/10 07:56:55 [TRACE] vertex "root": visit complete
+2020/07/10 07:56:55 [INFO] backend/local: apply calling Plan
+2020/07/10 07:56:55 [INFO] terraform: building graph: GraphTypePlan
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/07/10 07:56:55 [TRACE] ConfigTransformer: Starting for path: 
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/07/10 07:56:55 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/07/10 07:56:55 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-1" (*terraform.NodePlannableResource) config from minio.tf:1,1-33
+2020/07/10 07:56:55 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-2" (*terraform.NodePlannableResource) config from minio.tf:34,1-33
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/07/10 07:56:55 [TRACE] ProviderConfigTransformer: attaching to "provider.proxmox" provider configuration from provider.tf:1,1-19
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  ------
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/07/10 07:56:55 [TRACE] ProviderTransformer: proxmox_lxc.Minio-1 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:55 [TRACE] ProviderTransformer: proxmox_lxc.Minio-2 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:55 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-1" (*terraform.NodePlannableResource) needs provider.proxmox
+2020/07/10 07:56:55 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-2" (*terraform.NodePlannableResource) needs provider.proxmox
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/07/10 07:56:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/07/10 07:56:55 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.proxmox
+2020/07/10 07:56:55 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:55 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-1" references: []
+2020/07/10 07:56:55 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-2" references: []
+2020/07/10 07:56:55 [DEBUG] ReferenceTransformer: "provider.proxmox" references: []
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/07/10 07:56:55 [TRACE] ForcedCBDTransformer: "proxmox_lxc.Minio-2" (*terraform.NodePlannableResource) has no CBD descendent, so skipping
+2020/07/10 07:56:55 [TRACE] ForcedCBDTransformer: "proxmox_lxc.Minio-1" (*terraform.NodePlannableResource) has no CBD descendent, so skipping
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:55 [DEBUG] Starting graph walk: walkPlan
+2020/07/10 07:56:55 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "provider.proxmox (close)"
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "root"
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "provider.proxmox"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "root" waiting on "provider.proxmox (close)"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-1" waiting on "provider.proxmox"
+2020/07/10 07:56:55 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-2" waiting on "provider.proxmox"
+2020/07/10 07:56:55 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/07/10 07:56:55 [TRACE] dag/walk: dependencies changed for "provider.proxmox (close)", sending new deps
+2020/07/10 07:56:55 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/07/10 07:56:55 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-1", sending new deps
+2020/07/10 07:56:55 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-2", sending new deps
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "provider.proxmox"
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox": starting visit (*terraform.NodeApplyableProvider)
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: provider.proxmox
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-07-10T07:56:55.087Z [INFO]  plugin: configuring client automatic mTLS
+2020-07-10T07:56:55.139Z [DEBUG] plugin: starting plugin: path=/root/.terraform.d/plugins/terraform-provider-proxmox args=[/root/.terraform.d/plugins/terraform-provider-proxmox]
+2020-07-10T07:56:55.140Z [DEBUG] plugin: plugin started: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41307
+2020-07-10T07:56:55.140Z [DEBUG] plugin: waiting for RPC address: path=/root/.terraform.d/plugins/terraform-provider-proxmox
+2020-07-10T07:56:55.153Z [INFO]  plugin.terraform-provider-proxmox: configuring server automatic mTLS: timestamp=2020-07-10T07:56:55.153Z
+2020-07-10T07:56:55.204Z [DEBUG] plugin.terraform-provider-proxmox: plugin address: address=/tmp/plugin103546664 network=unix timestamp=2020-07-10T07:56:55.204Z
+2020-07-10T07:56:55.204Z [DEBUG] plugin: using plugin: version=5
+2020/07/10 07:56:55 [TRACE] BuiltinEvalContext: Initialized "proxmox" provider for provider.proxmox
+2020/07/10 07:56:55 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:55 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/07/10 07:56:55 [TRACE] buildProviderConfig for provider.proxmox: using explicit config only
+2020/07/10 07:56:55 [TRACE] GRPCProvider: GetSchema
+2020-07-10T07:56:55.310Z [TRACE] plugin.stdio: waiting for stdio data
+2020-07-10T07:56:55.312Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/07/10 07:56:55 [TRACE] GRPCProvider: Configure
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: provider.proxmox
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": starting visit (*terraform.NodePlannableResource)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": expanding dynamic subgraph
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  proxmox_lxc.Minio-1 - *terraform.NodePlannableResourceInstance
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:55 [DEBUG] Resource instance state not found for node "proxmox_lxc.Minio-1", instance proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:55 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-1" references: []
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": entering dynamic subgraph
+2020/07/10 07:56:55 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": starting visit (*terraform.NodePlannableResourceInstance)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:55 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalValidateSelfRef
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/07/10 07:56:55 [TRACE] Re-validating config for "proxmox_lxc.Minio-1"
+2020/07/10 07:56:55 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": starting visit (*terraform.NodePlannableResource)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": expanding dynamic subgraph
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  proxmox_lxc.Minio-2 - *terraform.NodePlannableResourceInstance
+  ------
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:55 [DEBUG] Resource instance state not found for node "proxmox_lxc.Minio-2", instance proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:55 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-2" references: []
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:55 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": entering dynamic subgraph
+2020/07/10 07:56:55 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:55 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": starting visit (*terraform.NodePlannableResourceInstance)
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:55 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalValidateSelfRef
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/07/10 07:56:55 [TRACE] Re-validating config for "proxmox_lxc.Minio-2"
+2020/07/10 07:56:55 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:55 [TRACE] GRPCProvider: PlanResourceChange
+2020/07/10 07:56:55 [TRACE] GRPCProvider: PlanResourceChange
+2020/07/10 07:56:55 [WARN] Provider "registry.terraform.io/-/proxmox" produced an invalid plan for proxmox_lxc.Minio-1, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .cmode: planned value cty.StringVal("tty") does not match config value cty.NullVal(cty.String)
+      - .tty: planned value cty.NumberIntVal(2) does not match config value cty.NullVal(cty.Number)
+      - .console: planned value cty.True does not match config value cty.NullVal(cty.Bool)
+      - .protection: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .start: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .onboot: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .arch: planned value cty.StringVal("amd64") does not match config value cty.NullVal(cty.String)
+      - .cpuunits: planned value cty.NumberIntVal(1024) does not match config value cty.NullVal(cty.Number)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCheckPreventDestroy
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:56:55 [TRACE] EvalWriteState: writing current state object for proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/07/10 07:56:55 [TRACE] EvalWriteDiff: recorded Create change for proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": visit complete
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": dynamic subgraph completed successfully
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-1": visit complete
+2020/07/10 07:56:55 [WARN] Provider "registry.terraform.io/-/proxmox" produced an invalid plan for proxmox_lxc.Minio-2, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .tty: planned value cty.NumberIntVal(2) does not match config value cty.NullVal(cty.Number)
+      - .console: planned value cty.True does not match config value cty.NullVal(cty.Bool)
+      - .protection: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .start: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .onboot: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .arch: planned value cty.StringVal("amd64") does not match config value cty.NullVal(cty.String)
+      - .cpuunits: planned value cty.NumberIntVal(1024) does not match config value cty.NullVal(cty.Number)
+      - .cmode: planned value cty.StringVal("tty") does not match config value cty.NullVal(cty.String)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCheckPreventDestroy
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:56:55 [TRACE] EvalWriteState: writing current state object for proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/07/10 07:56:55 [TRACE] EvalWriteDiff: recorded Create change for proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": visit complete
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": dynamic subgraph completed successfully
+2020/07/10 07:56:55 [TRACE] vertex "proxmox_lxc.Minio-2": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/07/10 07:56:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "provider.proxmox (close)"
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": evaluating
+2020/07/10 07:56:55 [TRACE] [walkPlan] Entering eval tree: provider.proxmox (close)
+2020/07/10 07:56:55 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/07/10 07:56:55 [TRACE] GRPCProvider: Close
+2020-07-10T07:56:55.359Z [DEBUG] plugin: plugin process exited: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41307
+2020-07-10T07:56:55.359Z [DEBUG] plugin: plugin exited
+2020/07/10 07:56:55 [TRACE] [walkPlan] Exiting eval tree: provider.proxmox (close)
+2020/07/10 07:56:55 [TRACE] vertex "provider.proxmox (close)": visit complete
+2020/07/10 07:56:55 [TRACE] dag/walk: visiting "root"
+2020/07/10 07:56:55 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/07/10 07:56:55 [TRACE] vertex "root": visit complete
+2020/07/10 07:56:55 [DEBUG] command: asking for input: "Do you want to perform these actions?"
+2020/07/10 07:56:56 [INFO] backend/local: apply calling Apply
+2020/07/10 07:56:56 [INFO] terraform: building graph: GraphTypeApply
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/07/10 07:56:56 [TRACE] ConfigTransformer: Starting for path: 
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/07/10 07:56:56 [TRACE] DiffTransformer starting
+2020/07/10 07:56:56 [TRACE] DiffTransformer: found Create change for proxmox_lxc.Minio-1 
+2020/07/10 07:56:56 [TRACE] DiffTransformer: proxmox_lxc.Minio-1 will be represented by proxmox_lxc.Minio-1
+2020/07/10 07:56:56 [TRACE] DiffTransformer: found Create change for proxmox_lxc.Minio-2 
+2020/07/10 07:56:56 [TRACE] DiffTransformer: proxmox_lxc.Minio-2 will be represented by proxmox_lxc.Minio-2
+2020/07/10 07:56:56 [TRACE] DiffTransformer complete
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.OrphanResourceTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.OrphanResourceTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/07/10 07:56:56 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-1 (prepare state)" (*terraform.NodeApplyableResource) config from minio.tf:1,1-33
+2020/07/10 07:56:56 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-2 (prepare state)" (*terraform.NodeApplyableResource) config from minio.tf:34,1-33
+2020/07/10 07:56:56 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-1" (*terraform.NodeApplyableResourceInstance) config from minio.tf:1,1-33
+2020/07/10 07:56:56 [TRACE] AttachResourceConfigTransformer: attaching to "proxmox_lxc.Minio-2" (*terraform.NodeApplyableResourceInstance) config from minio.tf:34,1-33
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/07/10 07:56:56 [DEBUG] Resource state not found for node "proxmox_lxc.Minio-2", instance proxmox_lxc.Minio-2
+2020/07/10 07:56:56 [DEBUG] Resource state not found for node "proxmox_lxc.Minio-1", instance proxmox_lxc.Minio-1
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/07/10 07:56:56 [TRACE] ProviderConfigTransformer: attaching to "provider.proxmox" provider configuration from provider.tf:1,1-19
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: proxmox_lxc.Minio-1 (prepare state) is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: proxmox_lxc.Minio-2 (prepare state) is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: proxmox_lxc.Minio-1 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: proxmox_lxc.Minio-2 is provided by provider.proxmox or inherited equivalent
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-1 (prepare state)
+2020/07/10 07:56:56 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-1 (prepare state)" (*terraform.NodeApplyableResource) needs provider.proxmox
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-2 (prepare state)
+2020/07/10 07:56:56 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-2 (prepare state)" (*terraform.NodeApplyableResource) needs provider.proxmox
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-1
+2020/07/10 07:56:56 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-1" (*terraform.NodeApplyableResourceInstance) needs provider.proxmox
+2020/07/10 07:56:56 [TRACE] ProviderTransformer: exact match for provider.proxmox serving proxmox_lxc.Minio-2
+2020/07/10 07:56:56 [DEBUG] ProviderTransformer: "proxmox_lxc.Minio-2" (*terraform.NodeApplyableResourceInstance) needs provider.proxmox
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/07/10 07:56:56 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/07/10 07:56:56 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-1 (prepare state)
+2020/07/10 07:56:56 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-2 (prepare state)
+2020/07/10 07:56:56 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-1
+2020/07/10 07:56:56 [TRACE] AttachSchemaTransformer: attaching resource schema to proxmox_lxc.Minio-2
+2020/07/10 07:56:56 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.proxmox
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/07/10 07:56:56 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-2" references: []
+2020/07/10 07:56:56 [DEBUG] ReferenceTransformer: "provider.proxmox" references: []
+2020/07/10 07:56:56 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-1 (prepare state)" references: []
+2020/07/10 07:56:56 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-2 (prepare state)" references: []
+2020/07/10 07:56:56 [DEBUG] ReferenceTransformer: "proxmox_lxc.Minio-1" references: []
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/07/10 07:56:56 [TRACE] AttachDependenciesTransformer: proxmox_lxc.Minio-1 depends on []
+2020/07/10 07:56:56 [TRACE] AttachDependenciesTransformer: proxmox_lxc.Minio-2 depends on []
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.PruneUnusedValuesTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.PruneUnusedValuesTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    provider.proxmox - *terraform.NodeApplyableProvider
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:56 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/07/10 07:56:56 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+  provider.proxmox - *terraform.NodeApplyableProvider
+  provider.proxmox (close) - *terraform.graphNodeCloseProvider
+    proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+  proxmox_lxc.Minio-1 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-1 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  proxmox_lxc.Minio-2 - *terraform.NodeApplyableResourceInstance
+    proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+  proxmox_lxc.Minio-2 (prepare state) - *terraform.NodeApplyableResource
+    provider.proxmox - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.proxmox (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/07/10 07:56:56 [DEBUG] Starting graph walk: walkApply
+2020/07/10 07:56:56 [TRACE] dag/walk: updating graph
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "provider.proxmox"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "provider.proxmox (close)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "root"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-1 (prepare state)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-2 (prepare state)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-1"
+2020/07/10 07:56:56 [TRACE] dag/walk: added new vertex: "proxmox_lxc.Minio-2"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "root" waiting on "provider.proxmox (close)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-2" waiting on "proxmox_lxc.Minio-2 (prepare state)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-2"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-1 (prepare state)" waiting on "provider.proxmox"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-2 (prepare state)" waiting on "provider.proxmox"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "provider.proxmox (close)" waiting on "proxmox_lxc.Minio-1"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:56:56 [TRACE] dag/walk: added edge: "proxmox_lxc.Minio-1" waiting on "proxmox_lxc.Minio-1 (prepare state)"
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "provider.proxmox (close)", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-2", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-1 (prepare state)", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-2 (prepare state)", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: dependencies changed for "proxmox_lxc.Minio-1", sending new deps
+2020/07/10 07:56:56 [TRACE] dag/walk: visiting "provider.proxmox"
+2020/07/10 07:56:56 [TRACE] vertex "provider.proxmox": starting visit (*terraform.NodeApplyableProvider)
+2020/07/10 07:56:56 [TRACE] vertex "provider.proxmox": evaluating
+2020/07/10 07:56:56 [TRACE] [walkApply] Entering eval tree: provider.proxmox
+2020/07/10 07:56:56 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:56 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-07-10T07:56:56.584Z [INFO]  plugin: configuring client automatic mTLS
+2020-07-10T07:56:56.687Z [DEBUG] plugin: starting plugin: path=/root/.terraform.d/plugins/terraform-provider-proxmox args=[/root/.terraform.d/plugins/terraform-provider-proxmox]
+2020-07-10T07:56:56.688Z [DEBUG] plugin: plugin started: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41324
+2020-07-10T07:56:56.688Z [DEBUG] plugin: waiting for RPC address: path=/root/.terraform.d/plugins/terraform-provider-proxmox
+2020-07-10T07:56:56.709Z [INFO]  plugin.terraform-provider-proxmox: configuring server automatic mTLS: timestamp=2020-07-10T07:56:56.709Z
+2020-07-10T07:56:56.824Z [DEBUG] plugin.terraform-provider-proxmox: plugin address: address=/tmp/plugin610508438 network=unix timestamp=2020-07-10T07:56:56.824Z
+2020-07-10T07:56:56.824Z [DEBUG] plugin: using plugin: version=5
+2020/07/10 07:56:57 [TRACE] BuiltinEvalContext: Initialized "proxmox" provider for provider.proxmox
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/07/10 07:56:57 [TRACE] buildProviderConfig for provider.proxmox: using explicit config only
+2020/07/10 07:56:57 [TRACE] GRPCProvider: GetSchema
+2020-07-10T07:56:57.049Z [TRACE] plugin.stdio: waiting for stdio data
+2020-07-10T07:56:57.052Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/07/10 07:56:57 [TRACE] GRPCProvider: Configure
+2020/07/10 07:56:57 [TRACE] [walkApply] Exiting eval tree: provider.proxmox
+2020/07/10 07:56:57 [TRACE] vertex "provider.proxmox": visit complete
+2020/07/10 07:56:57 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-1 (prepare state)"
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-1 (prepare state)": starting visit (*terraform.NodeApplyableResource)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-1 (prepare state)": evaluating
+2020/07/10 07:56:57 [TRACE] [walkApply] Entering eval tree: proxmox_lxc.Minio-1 (prepare state)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/07/10 07:56:57 [TRACE] [walkApply] Exiting eval tree: proxmox_lxc.Minio-1 (prepare state)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-1 (prepare state)": visit complete
+2020/07/10 07:56:57 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-1"
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-1": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-1": evaluating
+2020/07/10 07:56:57 [TRACE] [walkApply] Entering eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/07/10 07:56:57 [TRACE] EvalReadDiff: Read Create change from plan for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:57 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/07/10 07:56:57 [TRACE] EvalReadDiff: Read Create change from plan for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/07/10 07:56:57 [TRACE] Re-validating config for "proxmox_lxc.Minio-1"
+2020/07/10 07:56:57 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:57 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-2 (prepare state)"
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-2 (prepare state)": starting visit (*terraform.NodeApplyableResource)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-2 (prepare state)": evaluating
+2020/07/10 07:56:57 [TRACE] [walkApply] Entering eval tree: proxmox_lxc.Minio-2 (prepare state)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/07/10 07:56:57 [TRACE] [walkApply] Exiting eval tree: proxmox_lxc.Minio-2 (prepare state)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-2 (prepare state)": visit complete
+2020/07/10 07:56:57 [TRACE] dag/walk: visiting "proxmox_lxc.Minio-2"
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-2": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/07/10 07:56:57 [TRACE] vertex "proxmox_lxc.Minio-2": evaluating
+2020/07/10 07:56:57 [TRACE] [walkApply] Entering eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/07/10 07:56:57 [TRACE] EvalReadDiff: Read Create change from plan for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:57 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/07/10 07:56:57 [TRACE] EvalReadDiff: Read Create change from plan for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/07/10 07:56:57 [TRACE] Re-validating config for "proxmox_lxc.Minio-2"
+2020/07/10 07:56:57 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/07/10 07:56:57 [TRACE] GRPCProvider: PlanResourceChange
+2020/07/10 07:56:57 [TRACE] GRPCProvider: PlanResourceChange
+2020/07/10 07:56:57 [WARN] Provider "registry.terraform.io/-/proxmox" produced an invalid plan for proxmox_lxc.Minio-1, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .tty: planned value cty.NumberIntVal(2) does not match config value cty.NullVal(cty.Number)
+      - .console: planned value cty.True does not match config value cty.NullVal(cty.Bool)
+      - .protection: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .start: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .onboot: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .arch: planned value cty.StringVal("amd64") does not match config value cty.NullVal(cty.String)
+      - .cpuunits: planned value cty.NumberIntVal(1024) does not match config value cty.NullVal(cty.Number)
+      - .cmode: planned value cty.StringVal("tty") does not match config value cty.NullVal(cty.String)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalCheckPlannedChange
+2020/07/10 07:56:57 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:57 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-1
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReduceDiff
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalApplyPre
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalApply
+2020/07/10 07:56:57 [DEBUG] proxmox_lxc.Minio-1: applying the planned Create change
+2020/07/10 07:56:57 [TRACE] GRPCProvider: ApplyResourceChange
+2020/07/10 07:56:57 [WARN] Provider "registry.terraform.io/-/proxmox" produced an invalid plan for proxmox_lxc.Minio-2, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .protection: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .start: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .tty: planned value cty.NumberIntVal(2) does not match config value cty.NullVal(cty.Number)
+      - .console: planned value cty.True does not match config value cty.NullVal(cty.Bool)
+      - .onboot: planned value cty.False does not match config value cty.NullVal(cty.Bool)
+      - .arch: planned value cty.StringVal("amd64") does not match config value cty.NullVal(cty.String)
+      - .cpuunits: planned value cty.NumberIntVal(1024) does not match config value cty.NullVal(cty.Number)
+      - .cmode: planned value cty.StringVal("tty") does not match config value cty.NullVal(cty.String)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalCheckPlannedChange
+2020/07/10 07:56:57 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/07/10 07:56:57 [TRACE] EvalReadState: reading state for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] EvalReadState: no state present for proxmox_lxc.Minio-2
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalReduceDiff
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:56:57 [TRACE] <root>: eval: terraform.EvalNoop
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalApplyPre
+2020/07/10 07:56:57 [TRACE] <root>: eval: *terraform.EvalApply
+2020/07/10 07:56:57 [DEBUG] proxmox_lxc.Minio-2: applying the planned Create change
+2020/07/10 07:56:57 [TRACE] GRPCProvider: ApplyResourceChange
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/cluster/nextid HTTP/1.1
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.156Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 14
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.171Z [DEBUG] plugin.terraform-provider-proxmox: {"data":"103"}
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: POST /api2/json/nodes/PAR-212482/lxc HTTP/1.1
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 485
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/x-www-form-urlencoded
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.174Z [DEBUG] plugin.terraform-provider-proxmox: arch=amd64&cmode=tty&console=1&cores=4&cpulimit=0&cpuunits=1024&features=&hostname=Minio-2&memory=4096&mp1=volume%3Dlocal%3A80%2Cmp%3D%2Fmnt%2Fdata1&mp2=mp%3D%2Fmnt%2Fdata2%2Cvolume%3Dlocal%3A80&net1=ip%3D192.168.30.62%2F24%2Cgw%3D192.168.30.254%2Cname%3Deth0%2Cbridge%3Dvmbr5&net2=name%3Deth1%2Cbridge%3Dvmbr5&onboot=0&ostemplate=local%3Avztmpl%2Ftemplate-debian_v1-0.tar.gz&password=Espoir15&protection=0&rootfs=local%3A8&start=0&storage=local&swap=4096&tty=2&unprivileged=0&vmid=362
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/cluster/nextid?vmid=104 HTTP/1.1
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.175Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 14
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.190Z [DEBUG] plugin.terraform-provider-proxmox: {"data":"104"}
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: POST /api2/json/nodes/PAR-212482/lxc HTTP/1.1
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 485
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/x-www-form-urlencoded
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.191Z [DEBUG] plugin.terraform-provider-proxmox: arch=amd64&cmode=tty&console=1&cores=4&cpulimit=0&cpuunits=1024&features=&hostname=Minio-1&memory=4096&mp1=mp%3D%2Fmnt%2Fdata1%2Cvolume%3Dlocal%3A80&mp2=volume%3Dlocal%3A80%2Cmp%3D%2Fmnt%2Fdata2&net1=bridge%3Dvmbr5%2Cname%3Deth0%2Cip%3D192.168.30.61%2F24%2Cgw%3D192.168.30.254&net2=name%3Deth1%2Cbridge%3Dvmbr5&onboot=0&ostemplate=local%3Avztmpl%2Ftemplate-debian_v1-0.tar.gz&password=Espoir15&protection=0&rootfs=local%3A8&start=0&storage=local&swap=4096&tty=2&unprivileged=0&vmid=361
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Connection: close
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 76
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.256Z [DEBUG] plugin.terraform-provider-proxmox: {"data":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:"}
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.257Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.285Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.285Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.285Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:56:57.285Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pid":16170,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","node":"PAR-212482","status":"running","type":"vzcreate","id":"362","pstart":50800998,"user":"root@pam"}}
+2020-07-10T07:56:57.286Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Connection: close
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 76
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.287Z [DEBUG] plugin.terraform-provider-proxmox: {"data":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:"}
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:57.288Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:57 <<<<<<<<<< RESULT:
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:57 GMT
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:57.301Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","starttime":1594367817,"pid":16173,"node":"PAR-212482","id":"361","type":"vzcreate","status":"running","user":"root@pam","pstart":50801001}}
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:59 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:59.287Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:59 <<<<<<<<<< RESULT:
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:59 GMT
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:59 GMT
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:59.300Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","pid":16170,"starttime":1594367817,"node":"PAR-212482","status":"running","type":"vzcreate","id":"362","pstart":50800998,"user":"root@pam"}}
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:59 >>>>>>>>>> REQUEST:
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:56:59.302Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:56:59 <<<<<<<<<< RESULT:
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:56:59 GMT
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:56:59 GMT
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:56:59.312Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pstart":50801001,"user":"root@pam","status":"running","type":"vzcreate","id":"361","node":"PAR-212482","pid":16173,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:"}}
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:01 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:01.300Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:01 <<<<<<<<<< RESULT:
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:01 GMT
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:01 GMT
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:01.308Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"node":"PAR-212482","starttime":1594367817,"pid":16170,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","user":"root@pam","pstart":50800998,"id":"362","type":"vzcreate","status":"running"}}
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:01 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:01.312Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:01 <<<<<<<<<< RESULT:
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:01 GMT
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:01 GMT
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:01.317Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"user":"root@pam","pstart":50801001,"type":"vzcreate","id":"361","status":"running","node":"PAR-212482","starttime":1594367817,"pid":16173,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:"}}
+2020/07/10 07:57:01 [TRACE] dag/walk: vertex "root" is waiting for "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:57:01 [TRACE] dag/walk: vertex "provider.proxmox (close)" is waiting for "proxmox_lxc.Minio-2"
+2020/07/10 07:57:01 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "proxmox_lxc.Minio-2"
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:03 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:03.308Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:03 <<<<<<<<<< RESULT:
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:03 GMT
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:03 GMT
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:03.315Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"user":"root@pam","pstart":50800998,"type":"vzcreate","id":"362","status":"running","node":"PAR-212482","upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","starttime":1594367817,"pid":16170}}
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:03 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:03.317Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:03 <<<<<<<<<< RESULT:
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:03 GMT
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:03 GMT
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:03.322Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"user":"root@pam","pstart":50801001,"type":"vzcreate","id":"361","status":"running","node":"PAR-212482","upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","starttime":1594367817,"pid":16173}}
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:05 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:05.315Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:05 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:05 <<<<<<<<<< RESULT:
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:05 GMT
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:05 GMT
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:05.323Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"user":"root@pam","pstart":50800998,"id":"362","type":"vzcreate","status":"running","node":"PAR-212482","starttime":1594367817,"pid":16170,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:"}}
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:05 <<<<<<<<<< RESULT:
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:05 GMT
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:05 GMT
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:05.328Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pstart":50801001,"user":"root@pam","status":"running","id":"361","type":"vzcreate","node":"PAR-212482","upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","pid":16173,"starttime":1594367817}}
+2020/07/10 07:57:06 [TRACE] dag/walk: vertex "provider.proxmox (close)" is waiting for "proxmox_lxc.Minio-2"
+2020/07/10 07:57:06 [TRACE] dag/walk: vertex "root" is waiting for "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:57:06 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "proxmox_lxc.Minio-2"
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:07 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:07.324Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:07 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:07.329Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:07 <<<<<<<<<< RESULT:
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:07 GMT
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:07 GMT
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:07.331Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pid":16170,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","node":"PAR-212482","status":"running","type":"vzcreate","id":"362","pstart":50800998,"user":"root@pam"}}
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:07 <<<<<<<<<< RESULT:
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:07 GMT
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:07 GMT
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:07.335Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"status":"running","id":"361","type":"vzcreate","pstart":50801001,"user":"root@pam","pid":16173,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","node":"PAR-212482"}}
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:09 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:09.332Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:09 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:09.336Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:09 <<<<<<<<<< RESULT:
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:09 GMT
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:09 GMT
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:09.345Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pstart":50800998,"user":"root@pam","status":"running","id":"362","type":"vzcreate","node":"PAR-212482","upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","pid":16170,"starttime":1594367817}}
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:09 <<<<<<<<<< RESULT:
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:09 GMT
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:09 GMT
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:09.349Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"starttime":1594367817,"pid":16173,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","node":"PAR-212482","type":"vzcreate","id":"361","status":"running","user":"root@pam","pstart":50801001}}
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:11 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:11.346Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:11 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:11.352Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:11 <<<<<<<<<< RESULT:
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:11 GMT
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:11 GMT
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:11.358Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"pid":16170,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","node":"PAR-212482","status":"running","id":"362","type":"vzcreate","pstart":50800998,"user":"root@pam"}}
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:11 <<<<<<<<<< RESULT:
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:11 GMT
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:11 GMT
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:11.364Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"status":"running","type":"vzcreate","id":"361","pstart":50801001,"user":"root@pam","pid":16173,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","node":"PAR-212482"}}
+2020/07/10 07:57:11 [TRACE] dag/walk: vertex "root" is waiting for "meta.count-boundary (EachMode fixup)"
+2020/07/10 07:57:11 [TRACE] dag/walk: vertex "provider.proxmox (close)" is waiting for "proxmox_lxc.Minio-2"
+2020/07/10 07:57:11 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "proxmox_lxc.Minio-2"
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:13 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:13.359Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:13 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:13.365Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:13.372Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:13 <<<<<<<<<< RESULT:
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:13 GMT
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:13 GMT
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:13.373Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"node":"PAR-212482","upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:","starttime":1594367817,"pid":16170,"user":"root@pam","pstart":50800998,"id":"362","type":"vzcreate","status":"running"}}
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:13 <<<<<<<<<< RESULT:
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 224
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:13 GMT
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:13 GMT
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:13.378Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"node":"PAR-212482","upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","starttime":1594367817,"pid":16173,"user":"root@pam","pstart":50801001,"type":"vzcreate","id":"361","status":"running"}}
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:/status HTTP/1.1
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.373Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/tasks/UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:/status HTTP/1.1
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.378Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.379Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.379Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.379Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 <<<<<<<<<< RESULT:
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 242
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"user":"root@pam","pstart":50800998,"id":"362","exitstatus":"OK","type":"vzcreate","status":"stopped","node":"PAR-212482","starttime":1594367817,"pid":16170,"upid":"UPID:PAR-212482:00003F2A:03072966:5F081F49:vzcreate:362:root@pam:"}}
+2020-07-10T07:57:15.391Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/cluster/resources?type=vm HTTP/1.1
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.392Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 <<<<<<<<<< RESULT:
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 2544
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: {"data":[{"template":0,"vmid":202,"netout":17518,"netin":101528,"disk":892350464,"uptime":65905,"mem":33087488,"cpu":0,"name":"lxc-test-host-2","maxcpu":1,"id":"lxc/202","node":"PAR-212482","diskwrite":1150976,"diskread":81866752,"maxdisk":8388009984,"maxmem":1073741824,"type":"lxc","status":"running"},{"id":"qemu/101","maxcpu":2,"node":"PAR-212482","diskwrite":10344891392,"diskread":301320418,"maxdisk":42949672960,"maxmem":2147483648,"type":"qemu","status":"running","template":0,"vmid":101,"netout":1534672609,"netin":1526223222,"uptime":507859,"disk":0,"cpu":0.0317291037197068,"mem":1655039371,"name":"Firewall-2"},{"maxmem":536870912,"maxdisk":4294967296,"type":"lxc","status":"stopped","diskread":0,"maxcpu":24,"id":"lxc/361","diskwrite":0,"node":"PAR-212482","mem":0,"name":"CT361","cpu":0,"netin":0,"uptime":0,"disk":0,"template":0,"vmid":361,"netout":0},{"vmid":601,"template":0,"netout":70011134,"netin":17950219,"uptime":167610,"disk":2875875328,"cpu":0.0709981038404607,"mem":85741568,"name":"Bastion","diskwrite":3563520,"node":"PAR-212482","maxcpu":1,"id":"lxc/601","diskread":196415488,"status":"running","type":"lxc","maxdisk":5217320960,"maxmem":536870912},{"netout":20022732168,"vmid":100,"template":0,"uptime":508002,"disk":0,"netin":20146298484,"mem":1692825561,"name":"Firewall-1","cpu":0.0712684483550337,"node":"PAR-212482","diskwrite":12775514624,"id":"qemu/100","maxcpu":2,"diskread":136612500,"type":"qemu","status":"running","maxdisk":42949672960,"maxmem":2147483648},{"name":"lxc-test-host","mem":0,"cpu":0,"template":1,"vmid":201,"netout":0,"netin":0,"uptime":0,"disk":0,"maxdisk":4294967296,"maxmem":1073741824,"status":"stopped","type":"lxc","maxcpu":1,"id":"lxc/201","node":"PAR-212482","diskwrite":0,"diskread":0},{"maxdisk":8589934592,"maxmem":1073741824,"status":"stopped","type":"lxc","diskread":0,"id":"lxc/102","maxcpu":1,"node":"PAR-212482","diskwrite":0,"cpu":0,"mem":0,"name":"template-debian","uptime":0,"disk":0,"netin":0,"netout":0,"template":0,"vmid":102},{"status":"stopped","type":"lxc","maxdisk":4294967296,"maxmem":536870912,"diskwrite":0,"node":"PAR-212482","id":"lxc/362","maxcpu":24,"diskread":0,"cpu":0,"mem":0,"name":"CT362","vmid":362,"template":0,"netout":0,"netin":0,"uptime":0,"disk":0},{"type":"lxc","status":"running","maxdisk":8388009984,"maxmem":1073741824,"node":"PAR-212482","diskwrite":1155072,"id":"lxc/203","maxcpu":1,"diskread":81805312,"mem":32763904,"cpu":0,"name":"lxc-test-host-3","vmid":203,"template":0,"netout":40878,"netin":46554,"disk":911650816,"uptime":65898}]}
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/lxc/362/config HTTP/1.1
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 <<<<<<<<<< RESULT:
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 242
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"status":"stopped","type":"vzcreate","exitstatus":"OK","id":"361","pstart":50801001,"user":"root@pam","pid":16173,"starttime":1594367817,"upid":"UPID:PAR-212482:00003F2D:03072969:5F081F49:vzcreate:361:root@pam:","node":"PAR-212482"}}
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/cluster/resources?type=vm HTTP/1.1
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.402Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.403Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.403Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.403Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.403Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.403Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 <<<<<<<<<< RESULT:
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 2544
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:15.412Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: {"data":[{"mem":0,"cpu":0,"name":"CT362","vmid":362,"template":0,"netout":0,"netin":0,"disk":0,"uptime":0,"type":"lxc","status":"stopped","maxmem":536870912,"maxdisk":4294967296,"node":"PAR-212482","diskwrite":0,"id":"lxc/362","maxcpu":24,"diskread":0},{"maxcpu":1,"id":"lxc/203","node":"PAR-212482","diskwrite":1155072,"diskread":81805312,"maxmem":1073741824,"maxdisk":8388009984,"status":"running","type":"lxc","netout":40878,"template":0,"vmid":203,"uptime":65898,"disk":911650816,"netin":46554,"mem":32763904,"name":"lxc-test-host-3","cpu":0},{"vmid":102,"template":0,"netout":0,"netin":0,"uptime":0,"disk":0,"mem":0,"cpu":0,"name":"template-debian","diskwrite":0,"node":"PAR-212482","maxcpu":1,"id":"lxc/102","diskread":0,"status":"stopped","type":"lxc","maxdisk":8589934592,"maxmem":1073741824},{"diskread":0,"node":"PAR-212482","diskwrite":0,"maxcpu":1,"id":"lxc/201","status":"stopped","type":"lxc","maxdisk":4294967296,"maxmem":1073741824,"uptime":0,"disk":0,"netin":0,"netout":0,"vmid":201,"template":1,"mem":0,"cpu":0,"name":"lxc-test-host"},{"type":"qemu","status":"running","maxmem":2147483648,"maxdisk":42949672960,"diskread":136612500,"diskwrite":12775514624,"node":"PAR-212482","id":"qemu/100","maxcpu":2,"cpu":0.0712684483550337,"mem":1692825561,"name":"Firewall-1","uptime":508002,"disk":0,"netin":20146298484,"netout":20022732168,"vmid":100,"template":0},{"type":"lxc","status":"running","maxmem":536870912,"maxdisk":5217320960,"node":"PAR-212482","diskwrite":3563520,"maxcpu":1,"id":"lxc/601","diskread":196415488,"mem":85741568,"name":"Bastion","cpu":0.0709981038404607,"vmid":601,"template":0,"netout":70011134,"netin":17950219,"disk":2875875328,"uptime":167610},{"mem":0,"cpu":0,"name":"CT361","uptime":0,"disk":0,"netin":0,"netout":0,"vmid":361,"template":0,"status":"stopped","type":"lxc","maxdisk":4294967296,"maxmem":536870912,"diskread":0,"diskwrite":0,"node":"PAR-212482","maxcpu":24,"id":"lxc/361"},{"node":"PAR-212482","diskwrite":10344891392,"id":"qemu/101","maxcpu":2,"diskread":301320418,"status":"running","type":"qemu","maxmem":2147483648,"maxdisk":42949672960,"netout":1534672609,"vmid":101,"template":0,"uptime":507859,"disk":0,"netin":1526223222,"mem":1655039371,"name":"Firewall-2","cpu":0.0317291037197068},{"mem":33087488,"name":"lxc-test-host-2","cpu":0,"netin":101528,"disk":892350464,"uptime":65905,"template":0,"vmid":202,"netout":17518,"maxmem":1073741824,"maxdisk":8388009984,"type":"lxc","status":"running","diskread":81866752,"id":"lxc/202","maxcpu":1,"node":"PAR-212482","diskwrite":1150976}]}
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 >>>>>>>>>> REQUEST:
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: GET /api2/json/nodes/PAR-212482/lxc/361/config HTTP/1.1
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Host: 195.154.154.121:8006
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: User-Agent: Go-http-client/1.1
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Accept: application/json
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Cookie: PVEAuthCookie=PVE:root@pam:5F081F49::JgT73QtMvedC2dFibsuLfrJtIRnYSpx/6WIC3ufrDlpQNuERRmY7mblVb3UpRyWnttkWs/VqyVdY5CY14DnpTXUy45rXuObOdwon/DOoELIbEqN0hrSBsEr68MR1m5lIKhPK21EyNisOZz6i6D3G9ldE/KROrOpzu9RzexF2ipcpKT9n487qHojrWeawbq0FE2UClrZVB3DrhG7jqNvcB94BA707VlSU/M7IP5Nf8i9f5v4l/qLctHD/jzaSzOTBEdrkeUEDUSOPDsota4mxbEMpd4cb3/n3OXQ5dQaBZ6wcpf8OuGF3dvicg4SAV2y4riNt400HxtULhTZ3sweAJA==
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Csrfpreventiontoken: 5F081F49:x4XqpKh9Ua6phwEO1GZzUd3jvAVEBrJTx1B/3sxaehE
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Accept-Encoding: gzip
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: 2020/07/10 07:57:15 <<<<<<<<<< RESULT:
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: HTTP/1.1 200 OK
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Content-Length: 580
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Cache-Control: max-age=0
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Connection: Keep-Alive
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Content-Type: application/json;charset=UTF-8
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Date: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Expires: Fri, 10 Jul 2020 07:57:15 GMT
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Pragma: no-cache
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: Server: pve-api-daemon/3.0
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.413Z [DEBUG] plugin.terraform-provider-proxmox: {"data":{"hostname":"Minio-2","net2":"name=eth1,bridge=vmbr5,hwaddr=CA:CA:18:18:45:B6,type=veth","digest":"d798b74ed77d3afe3bf8e90b862cf4adad0c3f3f","arch":"amd64","console":1,"cores":4,"memory":4096,"mp2":"local:362/vm-362-disk-2.raw,mp=/mnt/data2,size=80G","cpuunits":1024,"cmode":"tty","mp1":"local:362/vm-362-disk-1.raw,mp=/mnt/data1,size=80G","swap":4096,"ostype":"debian","net1":"name=eth0,bridge=vmbr5,gw=192.168.30.254,hwaddr=CA:CA:7E:15:72:F5,ip=192.168.30.62/24,type=veth","tty":2,"rootfs":"local:362/vm-362-disk-0.raw,size=8G","cpulimit":"0","protection":0,"onboot":0}}
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: panic: interface conversion: interface {} is string, not int
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: goroutine 32 [running]:
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.SerializeValueForHash(0xc0000e8cd0, 0xf42340, 0xc000446d70, 0xc000431700)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/serialize.go:24 +0x94b
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.SerializeResourceForHash(0xc0000e8cd0, 0xfb1ba0, 0xc00049fad0, 0xc0000c7180)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/serialize.go:110 +0x319
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.HashResource.func1(0xfb1ba0, 0xc00049fad0, 0xc000469320)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/set.go:32 +0x68
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.(*Set).hash(0xc0004ae480, 0xfb1ba0, 0xc00049fad0, 0x1, 0xa0)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/set.go:221 +0x3d
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.(*Set).add(0xc0004ae480, 0xfb1ba0, 0xc00049fad0, 0x0, 0xc0004643d8, 0xa)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/set.go:198 +0x83
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.(*Set).Add(...)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/set.go:75
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/Telmate/terraform-provider-proxmox/proxmox.UpdateDevicesSet(0xc0004ae480, 0xc00044ef00, 0x2)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1015 +0xbb
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/Telmate/terraform-provider-proxmox/proxmox.resourceLxcRead(0xc0000a9f10, 0xf09ba0, 0xc00015ba40, 0x3, 0x3)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/terraform-provider-proxmox/proxmox/resource_lxc.go:548 +0x105a
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/Telmate/terraform-provider-proxmox/proxmox.resourceLxcCreate(0xc0000a9f10, 0xf09ba0, 0xc00015ba40, 0x2, 0x1c19820)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/terraform-provider-proxmox/proxmox/resource_lxc.go:406 +0x1104
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.(*Resource).Apply(0xc0000c7280, 0xc000426730, 0xc0003ddde0, 0xf09ba0, 0xc00015ba40, 0xfaf801, 0xc0004b01e8, 0xc000457c80)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/resource.go:305 +0x365
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/schema.(*Provider).Apply(0xc0000c7300, 0xc0000e98a8, 0xc000426730, 0xc0003ddde0, 0xc000451ee8, 0xc000396500, 0xfb1ba0)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/schema/provider.go:289 +0x99
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/helper/plugin.(*GRPCProviderServer).ApplyResourceChange(0xc00000eae0, 0x1392a20, 0xc000445bf0, 0xc000434d80, 0xc00000eae0, 0xc000445bf0, 0xc0007f7a20)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/helper/plugin/grpc_provider.go:885 +0x892
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: github.com/hashicorp/terraform/internal/tfplugin5._Provider_ApplyResourceChange_Handler(0x10d9b00, 0xc00000eae0, 0x1392a20, 0xc000445bf0, 0xc0004263c0, 0x0, 0x1392a20, 0xc000445bf0, 0xc00027d800, 0x6c0)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/github.com/hashicorp/terraform@v0.12.10/internal/tfplugin5/tfplugin5.pb.go:3189 +0x217
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: google.golang.org/grpc.(*Server).processUnaryRPC(0xc000001980, 0x139e3a0, 0xc0007e4a80, 0xc0003c0900, 0xc0000d8d50, 0x1bc89c0, 0x0, 0x0, 0x0)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/google.golang.org/grpc@v1.21.1/server.go:998 +0x46a
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: google.golang.org/grpc.(*Server).handleStream(0xc000001980, 0x139e3a0, 0xc0007e4a80, 0xc0003c0900, 0x0)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/google.golang.org/grpc@v1.21.1/server.go:1278 +0xd3d
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: google.golang.org/grpc.(*Server).serveStreams.func1.1(0xc000034450, 0xc000001980, 0x139e3a0, 0xc0007e4a80, 0xc0003c0900)
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/google.golang.org/grpc@v1.21.1/server.go:717 +0xa1
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2020-07-10T07:57:15.416Z [DEBUG] plugin.terraform-provider-proxmox: 	/home/adminarmel/go/pkg/mod/google.golang.org/grpc@v1.21.1/server.go:715 +0xa1
+2020/07/10 07:57:15 [DEBUG] proxmox_lxc.Minio-1: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/07/10 07:57:15 [TRACE] EvalMaybeTainted: proxmox_lxc.Minio-1 encountered an error during creation, so it is now marked as tainted
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:57:15 [TRACE] EvalWriteState: removing state object for proxmox_lxc.Minio-1
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalApplyProvisioners
+2020/07/10 07:57:15 [TRACE] EvalApplyProvisioners: proxmox_lxc.Minio-1 has no state, so skipping provisioners
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/07/10 07:57:15 [TRACE] EvalMaybeTainted: proxmox_lxc.Minio-1 encountered an error during creation, so it is now marked as tainted
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:57:15 [TRACE] EvalWriteState: removing state object for proxmox_lxc.Minio-1
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalApplyPost
+2020/07/10 07:57:15 [ERROR] <root>: eval: *terraform.EvalApplyPost, err: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [ERROR] <root>: eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [TRACE] [walkApply] Exiting eval tree: proxmox_lxc.Minio-1
+2020/07/10 07:57:15 [TRACE] vertex "proxmox_lxc.Minio-1": visit complete
+2020/07/10 07:57:15 [DEBUG] proxmox_lxc.Minio-2: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/07/10 07:57:15 [TRACE] EvalMaybeTainted: proxmox_lxc.Minio-2 encountered an error during creation, so it is now marked as tainted
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:57:15 [TRACE] EvalWriteState: removing state object for proxmox_lxc.Minio-2
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalApplyProvisioners
+2020/07/10 07:57:15 [TRACE] EvalApplyProvisioners: proxmox_lxc.Minio-2 has no state, so skipping provisioners
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalMaybeTainted
+2020/07/10 07:57:15 [TRACE] EvalMaybeTainted: proxmox_lxc.Minio-2 encountered an error during creation, so it is now marked as tainted
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/07/10 07:57:15 [TRACE] EvalWriteState: removing state object for proxmox_lxc.Minio-2
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalIf
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/07/10 07:57:15 [TRACE] <root>: eval: *terraform.EvalApplyPost
+2020/07/10 07:57:15 [ERROR] <root>: eval: *terraform.EvalApplyPost, err: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [ERROR] <root>: eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2020/07/10 07:57:15 [TRACE] [walkApply] Exiting eval tree: proxmox_lxc.Minio-2
+2020/07/10 07:57:15 [TRACE] vertex "proxmox_lxc.Minio-2": visit complete
+2020/07/10 07:57:15 [TRACE] dag/walk: upstream of "provider.proxmox (close)" errored, so skipping
+2020/07/10 07:57:15 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/07/10 07:57:15 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: read nil snapshot
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: no original state snapshot to back up
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 1
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020-07-10T07:57:15.422Z [DEBUG] plugin: plugin process exited: path=/root/.terraform.d/plugins/terraform-provider-proxmox pid=41324 error="exit status 2"
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2020/07/10 07:57:15 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-07-10T07:57:15.423Z [DEBUG] plugin: plugin exited

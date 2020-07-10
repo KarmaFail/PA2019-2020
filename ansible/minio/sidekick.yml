@@ -20,9 +20,8 @@
     - name: cat conf sidekick
       shell: |
         cat << EOF > /etc/default/sidekick
-        MINIO_OPTS="http://{{ ipreseau_minio }}{1...{{ minio_n }}}"
-        MINIO_PORT="{{ minio_port }}"
-        SIDEKICK_PORT="{{ sidekick_port }}"
+        MINIO_OPTS="http://{{ ipreseau_minio }}{1...{{ minio_n }}}:{{ minio_port }}"
+        SIDEKICK_OPTIONS="--health-path=/minio/health/ready --address :{{ sidekick_port }}"
         EOF
       args:
        executable: /bin/bash

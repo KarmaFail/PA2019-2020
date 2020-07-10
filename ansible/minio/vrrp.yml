@@ -54,7 +54,7 @@
                 auth_pass 1111
             }
             virtual_ipaddress {
-                {{ vrrp_ip_CIDR }} dev {{ interface_name }}
+                {{ vrrp_ip }} dev {{ interface_name }}
             }
             track_script {
               chk_{{ service_name }}
@@ -63,7 +63,7 @@
         EOF
       args:
        executable: /bin/bash
-      when: inventory_hostname != "{{ master_name }}"
+      when: inventory_hostname != {{ master_name }}
 
     - name: cat conf slave vrrp
       shell: |
@@ -101,7 +101,7 @@
                 auth_pass 1111
             }
             virtual_ipaddress {
-                {{ vrrp_ip_CIDR }} dev {{ interface_name }}
+                {{ vrrp_ip }} dev {{ interface_name }}
             }
             track_script {
               chk_{{ service_name }}
@@ -110,7 +110,7 @@
         EOF
       args:
        executable: /bin/bash
-      when: inventory_hostname != "{{ slave_name }}"
+      when: inventory_hostname != {{ slave_name }}
 
     - name:  restart service keepalived
       systemd:

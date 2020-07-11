@@ -1,11 +1,13 @@
 - name: Lancement playbook redis
-  hosts: fmionlyo01:redisfmionlyo01
-  environment:
-   DEBIAN_FRONTEND: noninteractive
+  hosts: "{{ ansible_hostsgroup }}"
+  gather_facts: yes
+  vars_files: redis-vars.yml
 
 
 
   tasks:
+    - include_vars: redis-vars.yml
+
     - name: Update repositories cache and install "tcpdump" package
       apt:
        name: tcpdump
@@ -70,7 +72,20 @@
       args:
        executable: /bin/bash
 
+      
+    - name: set master conf
+      shell: |
+        redis-cli -p 6379 config set requirepass Espoir15
+      args:
+       executable: /bin/bash
+      when: inventory_hostname != "{{ slave_name }}"
 
+    - name: set master conf
+      shell: |
+        redis-cli -p 6380 config set masterauth Espoir15
+      args:
+       executable: /bin/bash
+      when: inventory_hostname != "{{ master_name }}"
 
     - name: Restart service redis-server
       service:
@@ -80,9 +95,9 @@
     - name: set master node for slaves
       redis:
        command: slave
-       master_host: 192.168.0.21
-       master_port: 6379
-      when: inventory_hostname != "redis-1"
+       master_host: "{{ master_ip }}"
+       master_port: "{{ master_port }}"
+      when: inventory_hostname != "{{ master_name }}"
 
 
 #   - name: ensure packages installed

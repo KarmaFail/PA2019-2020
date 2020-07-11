@@ -1,5 +1,5 @@
 resource "proxmox_lxc" "RedisN-1" { 
-    hostname = "RedisN-1"
+    hostname = "redisn-1"
     cores = 4
     memory = "4096"
     swap = "4096"
@@ -19,7 +19,7 @@ resource "proxmox_lxc" "RedisN-1" {
 }
 
 resource "proxmox_lxc" "RedisN-2" { 
-    hostname = "RedisN-2"
+    hostname = "redisn-2"
     cores = 4
     memory = "4096"
     swap = "4096"

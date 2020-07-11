@@ -1,0 +1,5 @@
+master_name: redisn-1
+slave_name: redisn-2
+ansible_hostsgroup: redis-nextcloud
+master_ip: 192.168.20.31
+master_port: 6379

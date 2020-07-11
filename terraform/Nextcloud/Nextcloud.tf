@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "Nextcloud-1" { 
     hostname = "Nextcloud-1"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"
@@ -20,7 +20,7 @@ resource "proxmox_lxc" "Nextcloud-1" {
 resource "proxmox_lxc" "Nextcloud-2" { 
     hostname = "Nextcloud-2"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"

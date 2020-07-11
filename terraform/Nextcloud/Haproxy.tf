@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "HaproxyN-1" { 
     hostname = "HaproxyN-1"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"
@@ -20,7 +20,7 @@ resource "proxmox_lxc" "HaproxyN-1" {
 resource "proxmox_lxc" "HaproxyN-2" { 
     hostname = "HaproxyN-2"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"
@@ -39,7 +39,7 @@ resource "proxmox_lxc" "HaproxyN-2" {
 resource "proxmox_lxc" "HaproxyN-3" { 
     hostname = "HaproxyN-3"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"
@@ -58,7 +58,7 @@ resource "proxmox_lxc" "HaproxyN-3" {
 resource "proxmox_lxc" "HaproxyN-4" { 
     hostname = "HaproxyN-4"
     cores = 4
-    memory = "4096‬"
+    memory = "4096"
     swap = "4096"
     network {
         name = "eth0"

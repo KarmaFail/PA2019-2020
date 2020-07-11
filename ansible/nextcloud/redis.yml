@@ -79,6 +79,7 @@
     - name: set master conf
       shell: |
         redis-cli -p 6379 config set requirepass Espoir15
+        sed -i -e "s/# requirepass foobared/requirepass Espoir15/g" /etc/redis/redis.conf
       args:
        executable: /bin/bash
       when: inventory_hostname != "{{ slave_name }}"
@@ -88,6 +89,7 @@
         redis-cli -p 6380 config set masterauth Espoir15
         redis-cli -p 6380 SLAVEOF 192.168.20.31 6379
         sed -i -e "s/# slaveof <masterip> <masterport>/slaveof {{ master_ip }} {{ master_port }}/g" /etc/redis/redis.conf
+        sed -i -e "s/# masterauth <master-password>/masterauth Espoir15/g" /etc/redis/redis.conf
       args:
        executable: /bin/bash
       when: inventory_hostname != "{{ master_name }}"

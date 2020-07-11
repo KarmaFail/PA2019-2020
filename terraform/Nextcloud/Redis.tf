@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "RedisN-1" { 
     hostname = "RedisN-1"
-    cores = 2
-    memory = "2048"
-    swap = "2048"
+    cores = 4
+    memory = "4096"
+    swap = "4096"
     network {
         name = "eth0"
         bridge = "vmbr2"
         ip = "192.168.20.31/24"  
     }
-    ostemplate = "local:vztmpl/debian-10.0-standard_10.0-1_amd64.tar.gz" 
+    ostemplate = "local:vztmpl/template-debian_v1-0.tar.gz" 
     password = "Espoir15"
     vmid = "231"
     rootfs = "local:231" 
@@ -19,15 +19,15 @@ resource "proxmox_lxc" "RedisN-1" {
 
 resource "proxmox_lxc" "RedisN-2" { 
     hostname = "RedisN-2"
-    cores = 2
-    memory = "2048"
-    swap = "2048"
+    cores = 4
+    memory = "4096"
+    swap = "4096"
     network {
         name = "eth0"
         bridge = "vmbr2"
         ip = "192.168.20.32/24"  
     }
-    ostemplate = "local:vztmpl/debian-10.0-standard_10.0-1_amd64.tar.gz" 
+    ostemplate = "local:vztmpl/template-debian_v1-0.tar.gz" 
     password = "Espoir15"
     vmid = "232"
     rootfs = "local:232" 

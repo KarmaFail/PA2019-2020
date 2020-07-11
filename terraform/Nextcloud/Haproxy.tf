@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "HaproxyN-1" { 
     hostname = "HaproxyN-1"
     cores = 4
-    memory = "4096‬"
+    memory = 4096‬
     swap = "4096"
     network {
         name = "eth0"

@@ -1,0 +1,7 @@
+db_password: "nextcloud"
+db_name: "nextcloud"
+db_user: "nextcloud"
+pgsql_slave_name: pgsqln-2
+pgsql_master_name: pgsqln-1 
+pgsql_master_ip: 192.168.20.111
+pgsql_ansible_hostsgroup: pgsql-nextcloud

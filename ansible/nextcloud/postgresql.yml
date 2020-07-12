@@ -102,7 +102,7 @@
     - name: input et rm du script sql
       shell: |
         su -c "psql -d template1 -f /tmp/replica.sql" - postgres
-        rm /tmp/next.sql
+        rm /tmp/replica.sql
       args:
        executable: /bin/bash
     

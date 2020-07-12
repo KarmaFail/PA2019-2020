@@ -114,7 +114,7 @@
     - name: Stop service postgresql 11 slave
       service:
        name: postgresql
-       state: stop
+       state: stopped
       when: inventory_hostname != "{{ pgsql_master_name }}"
 
     - name: conf slave recovery

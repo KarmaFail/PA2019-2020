@@ -119,7 +119,7 @@
 
     - name: conf slave recovery
       shell: |
-        su -c "pg_basebackup -h {{ pgsql_master_ip }} -U replica -D /data/11/main -R -X --wal-method=stream" - postgres     
+        su -c "pg_basebackup -h {{ pgsql_master_ip }} -U replica -D /data/11/main -R -X stream" - postgres     
       args:
        executable: /bin/bash
       when: inventory_hostname != "{{ pgsql_master_name }}"

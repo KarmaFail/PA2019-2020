@@ -40,7 +40,8 @@
          - php7.3-mysql
          - php7.3-curl
          - postgresql-client-11
-    
+         - sudo 
+         
     - name: telechargement Nextcloud 19 tar.bz
       get_url:
         url: https://download.nextcloud.com/server/releases/nextcloud-19.0.0.tar.bz2

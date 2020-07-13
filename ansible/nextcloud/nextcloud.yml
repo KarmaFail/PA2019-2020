@@ -50,31 +50,18 @@
       unarchive:
         src: /tmp/nextcloud-19.0.0.tar.bz2
         dest: /var/www/
-    
-    - name: cat conf apache nextcloud
-      shell: |
-        cat << EOF > /etc/apache2/sites-available/nextcloud.conf
-        <VirtualHost *:80>
-              Servername Nextcloud-Objet
-              DocumentRoot "/var/www/nextcloud/"
-              <Directory "/var/www/nextcloud/">
-                      Options +FollowSymlinks
-                      AllowOverride All
-                      <IfModule mod_dav.c>
-                              Dav off
-                      </IfModule>
-                      Order allow,deny
-                      Allow from all
-              </Directory>
-              SetEnv HOME /var/www/nextcloud
-              SetEnv HTTP_HOME /var/www/nextcloud
-        </VirtualHost>" >> /etc/apache2/sites-available/nextcloud.conf
-        EOF
-      args:
-       executable: /bin/bash    
+      
+    - name: Copy file with owner and permission, conf apache nextcloud
+      copy:
+        src: /git/PA2019-2020/ansible/nextcloud/nextcloud.conf
+        dest: /etc/apache2/sites-available/
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
 
     - name: enable site and mode apache
       shell: |
+        sed -i -e 's,PrivateTmp=true,PrivateTmp=false\nNoNewPrivileges=yes,g' /lib/systemd/system/apache2.service
         a2ensite nextcloud.conf
         a2enmod rewrite
         a2enmod headers
@@ -124,6 +111,14 @@
       args:
        executable: /bin/bash
 
+    - name: Copy file with owner and permission, conf apache nextcloud
+      copy:
+        src: /git/PA2019-2020/ansible/nextcloud/config.php
+        dest: /var/www/nextcloud/config/
+        owner: www-data
+        group: www-data
+        mode: u=rw,g=r,o=r
+
     - name: Change file ownership, group and permissions
       file:
         path: /var/www/nextcloud/
@@ -145,13 +140,15 @@
       args:
        executable: /bin/bash  
     
+    - name:  restart Apache2
+      service:
+       name: apache2
+       state: restarted
+       daemon_reload: yes
+
     - name: install nextcloud with occ
       shell: |
         sudo -u www-data php occ  maintenance:install --no-interaction --database "pgsql" --database-host "192.168.20.90:5432" --database-name "nextcloud"  --database-user "nextcloud" --database-pass "nextcloud" --admin-user "adminesgi" --admin-pass "adminesgi"
       args:
        executable: /bin/bash
     
-    - name:  restart Apache2
-      service:
-       name: apache2
-       state: restarted

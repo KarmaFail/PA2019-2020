@@ -13,9 +13,9 @@
        name: haproxy
        update_cache: yes    
     
-    - name: cat conf haproxy.conf
+    - name: cat conf haproxy.cfg
       shell: |
-        cat << EOF > /etc/haproxy/haproxy.conf
+        cat << EOF > /etc/haproxy/haproxy.cfg
         global
           log /dev/log	local0
           log /dev/log	local1 notice

@@ -1,12 +1,12 @@
 - name: Lancement playbook haproxy backend
-  hosts: "{{ ansible_hostsgroup }}"
+  hosts: "{{ haproxy-back_ansible_hostsgroup }}"
   gather_facts: yes
-  vars_files: haproxy-vars.yml
+  vars_files: nextcloud_vars.yml
 
 
 
   tasks:
-    - include_vars: haproxy-vars.yml
+    - include_vars: nextcloud_vars.yml
 
     - name: Update repositories cache and install "haproxy" package
       apt:
@@ -79,13 +79,18 @@
 
         listen postgresql
                 bind *:5432
-          mode tcp
+                mode tcp
                 option pgsql-check user primaryuser
                 default-server inter 3s fall 3
-                server          postgresql1 {{ psql1_ip }}:5432        check port 5432
-                server          postgresql2 {{ psql2_ip }}:5432 backup check port 5432
+                server          postgresql1 {{ pgsql_master_ip }}:5432        check port 5432
+                server          postgresql2 {{ pgsql_slave_ip }}:5432 backup check port 5432
 
 
         EOF
       args:
        executable: /bin/bash    
+
+    - name: Restart service haproxy
+      service:
+       name: haproxy
+       state: restarted

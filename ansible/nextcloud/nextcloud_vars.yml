@@ -3,5 +3,14 @@ db_name: "nextcloud"
 db_user: "nextcloud"
 pgsql_slave_name: pgsqln2
 pgsql_master_name: pgsqln1 
-pgsql_master_ip: 192.168.20.111
 pgsql_ansible_hostsgroup: pgsql-nextcloud
+haproxy-back_ansible_hostsgroup: haproxy-back-nextcloud
+redis1_ip: 192.168.20.31
+redis1_port: 6379
+redis2_ip: 192.168.20.32
+redis2_port: 6380
+pgsql_master_ip: 192.168.20.111
+pgsql_slave_ip: 192.168.20.112
+rabbitmq1_ip:
+rabbitmq2_ip:
+rabbitmq3_ip:

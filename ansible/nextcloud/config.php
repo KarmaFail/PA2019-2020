@@ -2,10 +2,10 @@
 $CONFIG = array (
     'trusted_domains' =>
     array (
-      0 => '192.168.20.80'
-      1 => '192.168.20.21'
-      2 => '192.168.20.22'
-      3 => 'nextcloud.maildudek.fr',
+      0 => '192.168.20.80',
+      1 => '192.168.20.21',
+      2 => '192.168.20.22',
+      3 => 'nextcloud.maildudek.fr'
     ),
     'objectstore' => array(
         'class' => '\\OC\\Files\\ObjectStore\\S3',
@@ -27,6 +27,6 @@ $CONFIG = array (
     'redis' =>
         array (
             'host' => '192.168.20.80',
-            'port' => 6379,
+            'port' => 6379
             ),
 );

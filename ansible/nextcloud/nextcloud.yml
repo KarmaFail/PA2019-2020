@@ -41,7 +41,7 @@
          - php7.3-curl
          - postgresql-client-11
     
-    - name: telechargement binaire minio
+    - name: telechargement Nextcloud 19 tar.bz
       get_url:
         url: https://download.nextcloud.com/server/releases/nextcloud-19.0.0.tar.bz2
         dest: /tmp/    
@@ -98,7 +98,7 @@
         sed -i 's/;opcache.max_accelerated_files=2000/opcache.max_accelerated_files=10000/' /etc/php/7.3/apache2/php.ini
         sed -i 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=1/' /etc/php/7.3/apache2/php.ini
         sed -i 's/;opcache.save_comments=1/opcache.save_comments=1/' /etc/php/7.3/apache2/php.ini
-        sed -i 's/;date.timezone =/date.timezone = "Europe\/Paris" /' /etc/php/7.3/cli/php.inif
+        sed -i 's/;date.timezone =/date.timezone = "Europe\/Paris" /' /etc/php/7.3/cli/php.ini
       args:
        executable: /bin/bash  
     

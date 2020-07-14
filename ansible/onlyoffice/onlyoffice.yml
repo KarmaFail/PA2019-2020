@@ -5,6 +5,12 @@
   tasks:
     - include_vars: onlyoffice-vars.yml
 
+    - name: install require packages
+      apt:
+       pkg:
+         - gpg
+         
+
     - name: Add onlyoffice gpg keys
       apt_key:
         keyserver: "keyserver.ubuntu.com"

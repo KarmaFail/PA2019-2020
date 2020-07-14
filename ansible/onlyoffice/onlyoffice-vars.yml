@@ -8,6 +8,7 @@ pgsql_master_ip: 192.168.40.111
 pgsql_slave_ip: 192.168.40.112
 segment_ip: 192.168.40.0/24
 haproxy_back_ansible_hostsgroup: haproxy-back-onlyoffice
+haproxy_front_ansible_hostsgroup: haproxy-front-onlyoffice
 redis1_ip: 192.168.40.31
 redis2_ip: 192.168.40.32
 redis1_port: 6379

@@ -16,7 +16,7 @@ package_oo_name: onlyoffice-documentserver
 onlyoffice_default_config: /etc/onlyoffice/documentserver/local.json
 rabbitmq_server_user: onlyoffice
 rabbitmq_server_pass: onlyoffice
-rabbitmq_server_host: 192.168.40.80
+rabbitmq_server_host: 192.168.40.90
 rabbitmq_server_vpath: /
 json: /var/www/onlyoffice/documentserver/npm/json -q -f {{ onlyoffice_default_config }}
 rabbitmq_server_url: "amqp://{{ rabbitmq_server_user }}:{{ rabbitmq_server_pass }}@{{ rabbitmq_server_host }}{{ rabbitmq_server_vpath }}"

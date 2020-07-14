@@ -5,14 +5,14 @@ resource "proxmox_lxc" "Rediso-1" {
     swap = "4096"
     network {
         name = "eth0"
-        bridge = "vmbr2"
+        bridge = "vmbr3"
         ip = "192.168.40.31/24" 
         gw = "192.168.40.254" 
     }
     ostemplate = "local:vztmpl/template-debian9_v1-0.tar.gz" 
     password = "Espoir15"
     vmid = "231"
-    rootfs = "local:231" 
+    rootfs = "local:20" 
     storage = "local"
     target_node = "PAR-212482"
     unprivileged = false
@@ -25,14 +25,14 @@ resource "proxmox_lxc" "Rediso-2" {
     swap = "4096"
     network {
         name = "eth0"
-        bridge = "vmbr2"
+        bridge = "vmbr3"
         ip = "192.168.40.32/24"  
         gw = "192.168.40.254"
     }
     ostemplate = "local:vztmpl/template-debian9_v1-0.tar.gz" 
     password = "Espoir15"
     vmid = "232"
-    rootfs = "local:232" 
+    rootfs = "local:20" 
     storage = "local"
     target_node = "PAR-212482"
     unprivileged = false

@@ -1,2 +1,3 @@
 rabbitmq_ansible_hostsgroup: rabbitmq-onlyoffice
 rabbitmq_master_name: rabbitmq-1
+rabbitmq_master_ip: 192.168.40.41

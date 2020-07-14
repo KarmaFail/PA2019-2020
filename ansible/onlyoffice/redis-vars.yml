@@ -1,0 +1,5 @@
+master_name: rediso-1
+slave_name: rediso-2
+ansible_hostsgroup: redis-onlyoffice
+master_ip: 192.168.40.31
+master_port: 6379

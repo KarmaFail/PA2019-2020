@@ -12,6 +12,14 @@
       apt:
         name: rabbitmq-server
         update_cache: yes
+    
+    - name: set rabbitmq ip on hosts file 
+      shell: |
+        echo "{{ rabbitmq_master_ip }} {{ rabbitmq_master_name }}" >> /etc/hosts
+        echo "192.168.40.42 rabbitmq-2" >> /etc/hosts
+        echo "192.168.40.43 rabbitmq-3" >> /etc/hosts
+      args:
+       executable: /bin/bash
 
 
     - name: set rabbitmq envt (rabbitmq-env.conf|rabbitmq.conf)
@@ -63,10 +71,10 @@
       when: inventory_hostname == "{{ rabbitmq_master_name }}"
 
 
-    - name: rabbitmq1_clustering | join_cluster rabbit@rabbitmq1
-      command: rabbitmqctl join_cluster rabbit@rabbitmq1
+    - name: rabbitmq1_clustering | join_cluster rabbit@{{ rabbitmq_master_name }}
+      command: rabbitmqctl join_cluster rabbit@{{ rabbitmq_master_name }}
       when: inventory_hostname != "{{ rabbitmq_master_name }}"
 
-    - name: rabbitmq1_clustering | start rabbitmq1 app
+    - name: rabbitmq1_clustering | start {{ rabbitmq_master_name }} app
       command: rabbitmqctl start_app
       when: inventory_hostname != "{{ rabbitmq_master_name }}"

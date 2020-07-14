@@ -1,4 +1,4 @@
-- name: playbook postgresql onlyoffice
+- name: playbook installation onlyoffice
   hosts: "{{ onlyoffice_ansible_hostsgroup }}"
   vars_files: onlyoffice-vars.yml
 

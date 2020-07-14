@@ -41,7 +41,7 @@
          - php7.3-curl
          - postgresql-client-11
          - sudo 
-         - rsync
+         - jq
 
     - name: telechargement Nextcloud 19 tar.bz
       get_url:
@@ -115,7 +115,7 @@
         sudo -u www-data php /var/www/nextcloud/occ  maintenance:install --no-interaction --database "pgsql" --database-host "192.168.20.90:5432" --database-name "nextcloud"  --database-user "nextcloud" --database-pass "nextcloud" --admin-user "adminesgi" --admin-pass "adminesgi"
       args:
        executable: /bin/bash
-      when: inventory_hostname == "{{ nextcloud_1_name }}
+      when: inventory_hostname == "{{ nextcloud_1_name }}"
     
     - name: Fetch the file config.php
       run_once: yes

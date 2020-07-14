@@ -55,12 +55,18 @@
 
         listen nextcloud
                 bind *:80
-                balance roundrobin 
+                cookie SERVERID insert indirect nocache
+                retries 3
+                balance roundrobin
+                reqadd X-Forwarded-Proto:\ http
+                option httplog
+                option redispatch
+                option forwardfor 
                 stats enable
                 stats uri /stats
                 stats auth adminesgi:adminesgi
-                server {{ nextcloud_1_name }} 192.168.20.21:80 maxconn 50 check inter 10s
-                server nextcloud-2 192.168.20.22:80 maxconn 50 check inter 10s
+                server {{ nextcloud_1_name }} 192.168.20.21:80 maxconn 50 cookie check inter 10s
+                server nextcloud-2 192.168.20.22:80 maxconn 50 cookie check inter 10s
 
 
         EOF

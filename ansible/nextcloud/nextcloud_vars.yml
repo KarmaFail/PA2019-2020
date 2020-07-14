@@ -5,6 +5,7 @@ pgsql_slave_name: pgsqln2
 pgsql_master_name: pgsqln1 
 pgsql_ansible_hostsgroup: pgsql-nextcloud
 haproxy_back_ansible_hostsgroup: haproxy-back-nextcloud
+haproxy_front_ansible_hostsgroup: haproxy-front-nextcloud
 nextcloud_ansible_hostsgroup: nextcloud
 redis1_ip: 192.168.20.31
 redis1_port: 6379

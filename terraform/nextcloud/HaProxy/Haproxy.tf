@@ -6,7 +6,8 @@ resource "proxmox_lxc" "HaproxyN-1" {
     network {
         name = "eth0"
         bridge = "vmbr2"
-        ip = "192.168.20.81/24"  
+        ip = "192.168.20.81/24"
+        gw = "192.168.20.254"  
     }
     ostemplate = "local:vztmpl/template-debian_v1-0.tar.gz" 
     password = "Espoir15"
@@ -25,7 +26,8 @@ resource "proxmox_lxc" "HaproxyN-2" {
     network {
         name = "eth0"
         bridge = "vmbr2"
-        ip = "192.168.20.82/24"  
+        ip = "192.168.20.82/24"
+        gw = "192.168.20.254"  
     }
     ostemplate = "local:vztmpl/template-debian_v1-0.tar.gz" 
     password = "Espoir15"

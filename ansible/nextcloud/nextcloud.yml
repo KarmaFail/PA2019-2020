@@ -120,7 +120,7 @@
       synchronize: 
         src:  /var/www/nextcloud/config/config.php
         dest: /var/www/nextcloud/config/config.php
-      delegate_to: inventory_hostname == "{{ nextcloud_1_name }}"
+      delegate_to: 192.168.20.21
       when: inventory_hostname != "{{ nextcloud_1_name }}"
 
     - name:  restart Apache2

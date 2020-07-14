@@ -41,6 +41,7 @@
          - php7.3-curl
          - postgresql-client-11
          - sudo 
+         - rsync
 
     - name: telechargement Nextcloud 19 tar.bz
       get_url:
@@ -114,14 +115,16 @@
         sudo -u www-data php /var/www/nextcloud/occ  maintenance:install --no-interaction --database "pgsql" --database-host "192.168.20.90:5432" --database-name "nextcloud"  --database-user "nextcloud" --database-pass "nextcloud" --admin-user "adminesgi" --admin-pass "adminesgi"
       args:
        executable: /bin/bash
-      when: inventory_hostname == "{{ nextcloud_1_name }}"
+      when: inventory_hostname == "{{ nextcloud_1_name }}
     
-    - name: Copy config.php on other serv
-      synchronize: 
-        src:  /var/www/nextcloud/config/config.php
-        dest: /var/www/nextcloud/config/config.php
-      delegate_to: 192.168.20.21
-      when: inventory_hostname != "{{ nextcloud_1_name }}"
+    - name: Fetch the file config.php
+       run_once: yes
+       fetch: src=/var/www/nextcloud/config/config.php dest=/tmp/ flat=yes
+       when: inventory_hostname == "{{ nextcloud_1_name }}"
+    
+    - name: Copy the file config.php to other srv
+       copy: src=/tmp/config.php dest=/var/www/nextcloud/config/
+       when: inventory_hostname != "{{ nextcloud_1_name }}"
 
     - name:  restart Apache2
       service:

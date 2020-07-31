@@ -54,6 +54,10 @@
             virtual_router_id 10
             priority 200
             advert_int 1
+            unicast_src_ip {{ ansible_default_ipv4.address|quote }}
+            unicast_peer {
+              {{ slave_ip }}
+            }
             authentication {
                 auth_type PASS
                 auth_pass 1111
@@ -101,6 +105,10 @@
             virtual_router_id 10
             priority 100
             advert_int 1
+            unicast_src_ip {{ ansible_default_ipv4.address|quote }}
+            unicast_peer {
+              {{ master_ip }}
+            }
             authentication {
                 auth_type PASS
                 auth_pass 1111
